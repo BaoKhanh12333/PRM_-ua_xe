@@ -70,7 +70,7 @@ class UserService {
       count++;
       result = str[i] + result;
       if (count % 3 == 0 && i != 0) {
-        result = ',' + result;
+        result = ',$result';
       }
     }
     return (isNegative ? '-' : '') + result;

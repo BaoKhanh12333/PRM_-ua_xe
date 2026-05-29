@@ -3,6 +3,8 @@ import '../models/user_service.dart';
 import 'instruction_screen.dart';
 
 class AuthScreen extends StatefulWidget {
+  const AuthScreen({super.key});
+
   @override
   _AuthScreenState createState() => _AuthScreenState();
 }
@@ -91,7 +93,7 @@ class _AuthScreenState extends State<AuthScreen> {
             ),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
-              Colors.black.withOpacity(0.65),
+              Colors.black.withValues(alpha: 0.65),
               BlendMode.srcOver,
             ),
           ),
@@ -122,7 +124,7 @@ class _AuthScreenState extends State<AuthScreen> {
                         letterSpacing: 3,
                         shadows: [
                           Shadow(
-                            color: Colors.black.withOpacity(0.5),
+                            color: Colors.black.withValues(alpha: 0.5),
                             offset: Offset(2, 2),
                             blurRadius: 5,
                           ),
@@ -145,15 +147,15 @@ class _AuthScreenState extends State<AuthScreen> {
                   Container(
                     padding: EdgeInsets.all(24),
                     decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.75),
+                      color: Colors.black.withValues(alpha: 0.75),
                       borderRadius: BorderRadius.circular(24),
                       border: Border.all(
-                        color: Colors.redAccent.withOpacity(0.3),
+                        color: Colors.redAccent.withValues(alpha: 0.3),
                         width: 1.5,
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.redAccent.withOpacity(0.1),
+                          color: Colors.redAccent.withValues(alpha: 0.1),
                           blurRadius: 20,
                           spreadRadius: 2,
                         )

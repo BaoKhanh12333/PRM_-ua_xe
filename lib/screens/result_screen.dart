@@ -6,7 +6,7 @@ class ResultScreen extends StatelessWidget {
   final String username;
   final RaceResult result;
 
-  ResultScreen({required this.username, required this.result});
+  const ResultScreen({super.key, required this.username, required this.result});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class ResultScreen extends StatelessWidget {
             margin: EdgeInsets.all(20),
             padding: EdgeInsets.all(24),
             decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.8),
+              color: Colors.black.withValues(alpha: 0.8),
               borderRadius: BorderRadius.circular(24),
               border: Border.all(
                 color: isBroke ? Colors.redAccent : Colors.amberAccent,
@@ -34,7 +34,7 @@ class ResultScreen extends StatelessWidget {
               ),
               boxShadow: [
                 BoxShadow(
-                  color: (isBroke ? Colors.redAccent : Colors.amberAccent).withOpacity(0.15),
+                  color: (isBroke ? Colors.redAccent : Colors.amberAccent).withValues(alpha: 0.15),
                   blurRadius: 20,
                   spreadRadius: 2,
                 )
@@ -99,9 +99,9 @@ class ResultScreen extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: Colors.redAccent.withOpacity(0.15),
+                      color: Colors.redAccent.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: Colors.redAccent.withOpacity(0.3)),
+                      border: Border.all(color: Colors.redAccent.withValues(alpha: 0.3)),
                     ),
                     child: Text(
                       "Cảnh báo: Bạn đã cháy túi! Nhấn nút dưới đây để nhận lại 1,000,000 VNĐ hỗ trợ khởi nghiệp đua xe.",

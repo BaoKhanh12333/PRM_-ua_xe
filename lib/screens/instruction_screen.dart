@@ -4,7 +4,7 @@ import 'game_screen.dart';
 class InstructionScreen extends StatelessWidget {
   final String username;
 
-  InstructionScreen({required this.username});
+  const InstructionScreen({super.key, required this.username});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class InstructionScreen extends StatelessWidget {
             ),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
-              Colors.black.withOpacity(0.8),
+              Colors.black.withValues(alpha: 0.8),
               BlendMode.srcOver,
             ),
           ),
@@ -46,7 +46,7 @@ class InstructionScreen extends StatelessWidget {
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                       decoration: BoxDecoration(
-                        color: Colors.redAccent.withOpacity(0.2),
+                        color: Colors.redAccent.withValues(alpha: 0.2),
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(color: Colors.redAccent),
                       ),
@@ -67,10 +67,10 @@ class InstructionScreen extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.75),
+                      color: Colors.black.withValues(alpha: 0.75),
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
-                        color: Colors.grey.withOpacity(0.2),
+                        color: Colors.grey.withValues(alpha: 0.2),
                       ),
                     ),
                     child: Scrollbar(
@@ -179,7 +179,7 @@ class InstructionScreen extends StatelessWidget {
               shape: BoxShape.circle,
               boxShadow: [
                 BoxShadow(
-                  color: color.withOpacity(0.4),
+                  color: color.withValues(alpha: 0.4),
                   blurRadius: 8,
                   spreadRadius: 1,
                 ),
