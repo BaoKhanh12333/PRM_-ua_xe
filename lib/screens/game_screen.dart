@@ -228,8 +228,7 @@ class _GameScreenState extends State<GameScreen> {
       soundCaption = "🔊 PHANH CHÁY ĐƯỜNG: KÉEEEEEÉTTT!!! 🏁";
     });
 
-    // Phát âm thanh phanh xe cháy đường khi về đích
-    SoundService.playBrakeScreech();
+    // 1. Xe cán đích -> Phát ngay tiếng phanh xe cháy đường
 
     // Tự động xoá caption âm thanh sau 2.5 giây
     Future.delayed(Duration(milliseconds: 2500), () {
@@ -240,7 +239,16 @@ class _GameScreenState extends State<GameScreen> {
       }
     });
 
+    // 2. Chờ 0.6 giây để tiếng phanh kêu xong -> Mở bảng kết quả và phát nhạc Thắng/Thua
     Future.delayed(Duration(milliseconds: 600), () {
+      
+      // KIỂM TRA LỢI NHUẬN ĐỂ PHÁT ÂM THANH
+      if (profit > 0) {
+        SoundService.playWinSound(); // Lãi -> Phát nhạc thắng
+      } else {
+        SoundService.playLoseSound(); // Lỗ hoặc huề vốn -> Phát nhạc thua
+      }
+
       Navigator.push(
         context,
         MaterialPageRoute(

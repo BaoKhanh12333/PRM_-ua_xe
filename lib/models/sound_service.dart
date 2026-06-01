@@ -8,20 +8,29 @@ class SoundService {
     try {
       await _player.stop();
       // Audio source từ Mixkit CDN (Car Engine Start/Rev)
-      await _player.play(UrlSource('https://assets.mixkit.co/active_storage/sfx/2654/2654-84.wav'));
+      await _player.play(AssetSource('audio/engine.mp3'));
     } catch (e) {
       print("Không thể phát âm thanh động cơ (Có thể do thiết bị/mạng): $e");
     }
   }
-
-  // Phát âm thanh phanh xe cháy đường khi xe cán đích
-  static Future<void> playBrakeScreech() async {
+static Future<void> playWinSound() async {
     try {
       await _player.stop();
-      // Audio source từ Mixkit CDN (Car Brake Screech/Drift)
-      await _player.play(UrlSource('https://assets.mixkit.co/active_storage/sfx/2816/2816-84.wav'));
+      await _player.play(AssetSource('audio/win.mp3'));
     } catch (e) {
-      print("Không thể phát âm thanh phanh (Có thể do thiết bị/mạng): $e");
+      print("Không thể phát âm thanh chiến thắng: $e");
     }
   }
+
+  // Phát âm thanh thua cược (Sad trombone)
+  static Future<void> playLoseSound() async {
+    try {
+      await _player.stop();
+      await _player.play(AssetSource('audio/lose.mp3'));
+    } catch (e) {
+      print("Không thể phát âm thanh thua cược: $e");
+    }
+  }
+  // Phát âm thanh phanh xe cháy đường khi xe cán đích
+
 }
