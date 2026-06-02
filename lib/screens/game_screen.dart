@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../models/race_data.dart';
 import '../models/user_service.dart';
 import '../models/sound_service.dart';
+import 'auth_screen.dart';
 import 'instruction_screen.dart';
 import 'result_screen.dart';
 
@@ -324,7 +325,11 @@ class _GameScreenState extends State<GameScreen> {
             icon: Icon(Icons.logout, color: Colors.redAccent),
             tooltip: 'Đăng xuất',
             onPressed: () {
-              Navigator.popUntil(context, (route) => route.isFirst);
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => const AuthScreen()),
+                (route) => false,
+              );
             },
           ),
         ],

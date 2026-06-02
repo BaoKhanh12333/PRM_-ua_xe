@@ -87,7 +87,7 @@ class InstructionScreen extends StatelessWidget {
                           ),
                           _buildStep(
                             "2",
-                            "ĐẶT CƯỢC CHIẾN MÃ",
+                            "ĐẶT CƯỢC XE ĐUA",
                             "Có 3 đường đua (tương ứng với 3 xe đua). Nhập số tiền cược vào ô cược bên phải của mỗi xe. Bạn có thể cược cho 1, 2 hoặc cả 3 xe tùy ý.",
                             Icons.edit_note,
                             Colors.blue,
